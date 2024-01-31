@@ -1,0 +1,11 @@
+#矩阵挑战项目17
+row1=["1","2","3"]
+row2=["4","5","6"]
+row3=["7","8","9"]
+a=[row1,row2,row3]
+print(f"{row1}\n{row2}\n{row3}")
+xx="31"
+column=int(xx[0])-1#列索引为变量xx的第一个字符
+row=int(xx[1])-1#行索引为变量xx的第二个字符
+a[row][column]="x"#根据索引修改值为x
+print(f"{row1}\n{row2}\n{row3}")
