@@ -1,0 +1,29 @@
+#景区计价器？2
+#票价1
+Price1=5
+#票价2
+Price2=7
+#票价3
+Price3=12
+variable=0
+cm=int(input("您的身高多是？cm："))
+if cm > 120 :
+    age=int(input("你今年多少岁了？"))
+    # variable=Price1 if age <= 12 else(Price2 if age <=18 else Price3)
+    if age <= 12 :
+        variable=Price1
+    elif age <= 18:
+        variable += Price2
+    elif age >= 45 and age <= 55 :
+        print("一切都会过去的！")
+    else:
+        variable += Price3
+else:
+    variable="对不起，您的身高不符合安全限制！"
+
+yes_no=input("您是否愿意和您的门票合照，但是需要支付3美元。yes or no")
+
+if yes_no.lower() == "yes":
+    print("您本次的消费一共是："+str(3+variable))
+else:
+    print("您本次的消费一共是："+str(variable))
