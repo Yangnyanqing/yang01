@@ -1,0 +1,5 @@
+#名称生成器?项目1
+name=input("请输入你的姓名:\n")
+name1=input("请输入你最喜欢的小动物:\n")
+name2=input("请输入你最喜欢的城市:\n")
+print(name[0]+name1[-1]+name2[0])
