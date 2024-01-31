@@ -1,0 +1,94 @@
+import os  
+import openpyxl  
+from openpyxl.utils import get_column_letter
+  
+# 创建一个空字典来存储数据  
+data_dict = {}  
+  
+# 创建变量1，用于储存未匹配到项的文件名  
+no_match_files = []  
+  
+# 创建变量2，用于储存位置信息  
+location_info = []  
+  
+# 指定文件夹路径（将“your_folder_path”替换为实际的文件夹路径）  
+folder_path = r"C:\Users\Administrator\Desktop\新建文件夹 (5)"  
+  
+# 如果文件夹路径存在，则遍历文件夹内的所有文件  
+if os.path.exists(folder_path):  
+    for filename in os.listdir(folder_path):  
+        # 检查文件是否为Excel文件  
+        if filename.endswith(".xlsx"):  
+            # 打开Excel表格，并提取当前Excel表格文件名称  
+            workbook = openpyxl.load_workbook(os.path.join(folder_path, filename))  
+            sheet = workbook.active  
+            table_name = filename[:-5]  # 提取表格名称，假设文件名格式为"table_name.xlsx"  
+            key = table_name[:3].lower().strip()  # 使用lower()确保不区分大小写  
+            # data_dict[key] = None
+            # print("xd"+key+"xs")  
+            # 搜索Excel表格内与Excel表格文件名前2个字符相同的单元格  
+            matching_cell = None  
+            for row in sheet.iter_rows():  
+                for cell in row:  
+                    if cell.value and str(cell.value)[:3].lower() == key:
+                    
+                        matching_cell = cell  
+                        # print("xd"+str(matching_cell.value)+"xs")
+                        # print(data_dict[key])
+                        # print(key)
+                        # data_dict[key] = None
+                         
+                        
+                     # 如果找到与文件名前三个字符相同的单元格，则执行以下操作：  
+                        if matching_cell:  
+                            # # print(key)
+                            # data_dict[key] = {}  # 确保字典中存在该键  
+                            # # print(data_dict[key])
+                            # data_dict[key][matching_cell.value] = sheet.cell(row=matching_cell.row + 1, column=matching_cell.column).value  # 更新或添加新的值  
+                            # # print(data_dict[key])
+                            location_info.append((matching_cell.row, matching_cell.column))  # 将位置信息添加到变量2中  
+                            # 通过坐标信息定位到符合条件的单元格右侧的第一个单元格的位置信息并更新变量2的值  
+                            location_info.append((matching_cell.row, matching_cell.column + 1))  # 将位置信息添加到变量2中
+                            
+                            data_dict[matching_cell.value]= sheet.cell(row=location_info[-1][0], column=location_info[-1][1]).value  # 更新字典的值 # 更新字典的值
+                           
+                            # print(cell.value)
+                            # print(data_dict[key][matching_cell.value])
+                        else:  # 如果未找到与文件名前三个字符相同的单元格，则将当前表格文件名称添加到变量1中  
+                             no_match_files.append(filename)  
+else:  # 如果文件夹路径不存在，则打印错误信息  
+    print("指定的文件夹路径不存在！")  
+
+
+# aa = data_dict.keys()  
+# print(aa)
+# print(data_dict["村镇办工作开展情况日报表"])
+
+
+# 创建一个新的工作簿来存储数据
+folder_path = r"C:\Users\Administrator\Desktop\新建文件夹 (5)\新建文件夹 (6)"
+
+# 创建新的工作簿
+new_workbook = openpyxl.Workbook()
+
+# 获取活跃的工作表
+new_sheet = new_workbook.active
+
+# 写入列标题
+new_sheet.cell(row=1, column=1, value="键")
+new_sheet.cell(row=1, column=2, value="值")
+
+# 遍历字典并将数据写入新的工作簿
+for i, (key, value) in enumerate(data_dict.items()):
+    # 将字典转换为字符串
+    value_str = str(value)
+    # 获取当前行和列的索引
+    row_index = i + 2  # 从第二行开始写入
+    col_index = 1
+
+    # 将键和值写入单元格
+    new_sheet.cell(row=row_index, column=col_index, value=key)
+    new_sheet.cell(row=row_index, column=col_index + 1, value=value_str)
+
+# 保存新的工作簿到指定的文件夹路径
+new_workbook.save(folder_path + "/已合并请提取.xlsx")
