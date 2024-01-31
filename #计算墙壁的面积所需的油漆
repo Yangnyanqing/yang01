@@ -1,0 +1,8 @@
+#计算墙壁的面积所需的油漆
+import math
+
+def 公式(wall_height,wall_width,coveragepercan):
+    numberofcans = (wall_height * wall_width) / coveragepercan
+    numberofcans1 = math.ceil(numberofcans)
+    print(f"实际需要{numberofcans}桶,应该购买{numberofcans1}桶！")
+公式(wall_height=3,wall_width=9,coveragepercan=5)
