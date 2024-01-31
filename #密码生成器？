@@ -1,0 +1,42 @@
+#密码生成器？
+import random
+
+字母 = "a b c d e f g A B C D E F G"
+数字 = "1 2 3 4 5 6 7 8 9"
+符号 = "! @ # $ % ^ & * "
+字母=字母.split()
+数字 = 数字.split()
+符号 = 符号.split()
+字符=[字母+数字+符号]
+字母长度=len(字母)
+密码中字母长度=3
+数字长度=len(数字)
+密码中数字长度=3
+符号长度=len(符号)
+密码中符号长度=3
+字符长度=len(字符)
+
+密码=""
+#简单的密码生成
+# 密码中字符长度=密码中字母长度+密码中符号长度+密码中数字长度
+# for s in range(0,密码中字母长度):
+#     密码=密码+str(字母[random.randint(0,字母长度-1)])
+# for s in range(0,密码中数字长度):
+#     密码=密码+str(数字[random.randint(0,数字长度-1)])
+# for s in range(0,密码中符号长度):
+#     密码=密码+str(符号[random.randint(0,符号长度-1)])
+
+##困难的密码生成
+密码列=[]
+密码中字符长度=密码中字母长度+密码中符号长度+密码中数字长度
+for s in range(0,密码中字母长度):
+    密码列.append(str(字母[random.randint(0,字母长度-1)]))
+for s in range(0,密码中数字长度):
+    密码列.append(str(数字[random.randint(0,数字长度-1)]))
+for s in range(0,密码中符号长度):
+    密码列.append(str(符号[random.randint(0,符号长度-1)]))
+random.shuffle(密码列)
+for 密码循环 in 密码列:
+    密码=密码+密码循环
+
+print(密码)
