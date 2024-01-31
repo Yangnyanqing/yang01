@@ -1,0 +1,23 @@
+#爱情计算器项目12
+name1=input("请输入你的英文名：")
+name2=input("请输入他/她的英文名：")
+# name2="rreoli"
+# name1="ttuuuu"
+name=name2.lower()+name1.lower()
+t=name.count("t")
+r=name.count("r")
+u=name.count("u")
+e=name.count("e")
+l=name.count("l")
+o=name.count("o")
+v=name.count("v")
+e=name.count("e")
+true0=(t+r+u+e)
+love=(l+o+v+e)
+love_index=(int(str(true0)+str(love)))
+if love_index < 10 or love_index > 90:
+    print(f"你们的分数是{str(love_index)},你们在一起就像是可乐遇到了曼妥思。")
+elif love_index  > 40 and love_index < 50 :
+    print(f"你们的分数是{str(love_index)},你们在一起很好！")
+else:
+    print(f"你们的分数是{str(love_index)}!") 
