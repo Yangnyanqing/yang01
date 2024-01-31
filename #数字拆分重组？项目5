@@ -1,0 +1,5 @@
+#数字拆分重组？项目5
+tow=input("请输入一串数字：")
+print(type(tow))
+print( int (tow[0]) + int (tow[1]))
+print( int (str( tow[0] ) ) + int ( str( tow[1] ) ) ) 
