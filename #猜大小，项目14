@@ -1,0 +1,5 @@
+#猜大小，项目14
+# import random 
+# print("这是一个筛子游戏，比大小，买定离手！")
+# print(f"筛子一号:\t",random.randint(1,10))
+# print(f"筛子二号:\t",random.randint(1,10))
