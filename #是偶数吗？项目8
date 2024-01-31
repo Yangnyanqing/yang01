@@ -1,0 +1,10 @@
+#是偶数吗？项目8
+tow =float ( input ( "请输入一个数字：" ) ) 
+tow1=int(tow)
+if tow != tow1:
+    print("您的输入有误，请输入整数，不要输入浮点数!")
+else:
+    if tow1 % 2 == 0:
+        print(str(tow1)+"是一个偶数")
+    else :
+        print(str(tow1)+"是一个奇数")
