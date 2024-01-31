@@ -1,0 +1,17 @@
+#体脂计算器？项目6
+cm=float(input("请输入你的身高单位cm：\n"))
+kg=float(input("请输入你的体重单位kg：\n"))
+m=int(cm)/100
+BMI=float((int(kg)/m**2))
+print(format(BMI,".1f"))
+BMI=34.9
+if BMI >= 18.5 and BMI <= 24.9:
+    print("您现在体重正常！")
+elif BMI < 29.9:
+    print("你太胖了，少吃主食，多运动！！")
+elif  BMI<= 34.9:
+    print("你超重了！")
+elif  BMI >= 35 :
+    print("你太重了需要治疗！")
+else :
+    print("你太瘦了，多吃主食，多运动！！")
