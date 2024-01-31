@@ -1,0 +1,8 @@
+猜正反，项目15
+print("这是一个抛硬币游戏，猜正反，买定离手！")
+yingb=random.randint(1,11)
+if yingb % 2 == 0 :
+    yingba="正面"
+elif yingb % 2 != 0 :
+    yingba="反面"
+print(f"本次是{yingba}")
