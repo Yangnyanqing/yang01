@@ -1,0 +1,26 @@
+#剪刀石头布
+import random
+# your=input("你输入的1 2 3 分别代表剪刀、石头、布请输入：\n")
+your = "3"
+she = random.randint(1,3)
+a="剪刀"
+b="石头"
+c="布"
+abc = [a,b,c]
+your=int(your)
+
+if your +1 == she or your - 2 ==she:
+   print("恭喜大魔王！获胜！")
+elif your -1 ==she or your +2 ==she:
+   print("恭喜勇士！获胜！")
+elif your == she :
+   print("平局")
+else:
+   print(your)
+   print(she)
+
+your = abc[your-1]
+she = abc[she-1]
+
+print(f"你伸出了{your}")
+print(f"大魔王伸出了{she}")

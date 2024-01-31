@@ -1,0 +1,68 @@
+一句条件文件重命名
+import os
+
+def check_and_rename_excel_files(folder_path):
+    for root, dirs, files in os.walk(folder_path):
+        for file in files:
+            if file.endswith(''):
+                file_path = os.path.join(root, file)
+                file_name = os.path.basename(file_path)
+                if '执法' in file_name:
+                    new_file_name = '综合执法大队.xlsx'
+                elif'党建' in file_name:
+                    new_file_name = '党建办.xlsx'
+                elif '宣传' in file_name:
+                    new_file_name = '宣传中心.xlsx'
+                elif '济发' in file_name:
+                    new_file_name = '经济发展办.xlsx'
+                elif '计中' in file_name:
+                    new_file_name = '统计中心.xlsx'
+                elif '村建' in file_name:
+                    new_file_name = '乡村建设办.xlsx'
+                elif '资中' in file_name:
+                    new_file_name = '三资中心.xlsx'
+                elif '农办' in file_name:
+                    new_file_name = '农办.xlsx'
+                elif '生态' in file_name:
+                    new_file_name = '生态环保办.xlsx'
+                elif '镇办' in file_name:
+                    new_file_name = '村镇办.xlsx'
+                elif '应急' in file_name:
+                    new_file_name = '应急办.xlsx'
+                elif '共服' in file_name:
+                    new_file_name = '公共服务办公室.xlsx'
+                elif '民政' in file_name:
+                    new_file_name = '民政所.xlsx'
+                elif '劳保' in file_name:
+                    new_file_name = '劳保所.xlsx'
+                elif '安建' in file_name:
+                    new_file_name = '平安建设办.xlsx'
+                elif '综治' in file_name:
+                    new_file_name = '综治办.xlsx'
+                elif '执法' in file_name:
+                    new_file_name = '综合执法.xlsx'
+                elif '政审' in file_name:
+                    new_file_name = '行政审批中心.xlsx'
+                elif '役军' in file_name:
+                    new_file_name = '退役军人服务站.xlsx'
+                elif '资中' in file_name:
+                    new_file_name = '三资中心.xlsx'
+                elif '财政' in file_name:
+                    new_file_name = '财政所.xlsx'
+                elif '然资' in file_name:
+                    new_file_name = '自然资源和规划所.xlsx'
+                elif '市场' in file_name:
+                    new_file_name = '市场监管所.xlsx'
+                elif '监察' in file_name:
+                    new_file_name = '纪检监察室.xlsx'
+                elif '司法' in file_name:
+                    new_file_name = '司法所.xlsx'
+                else:
+                    new_file_name = file_name
+                os.rename(file_path, os.path.join(root, new_file_name))
+
+# 指定要检查的文件夹路径
+folder_path = r'C:\Users\Administrator\Desktop\新建文件夹 (5)'
+
+# 调用函数检查并重命名文件
+check_and_rename_excel_files(folder_path)

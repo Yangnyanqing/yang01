@@ -1,0 +1,8 @@
+#AA计算器？项目4
+print("欢迎使用AA计算器！")
+spend=float( input("今日消费金额\t:¥") )
+peiple=int( input("均摊人数\t:") )
+tip=int(input("付出小费百分比10-20\t:"))
+tip=tip/100
+jieg=format((spend/peiple+spend/peiple*tip),'.1f')
+print("你需要付出\t¥"+jieg)

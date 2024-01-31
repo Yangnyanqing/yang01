@@ -1,0 +1,23 @@
+#金银岛小游戏项目13
+print("欢迎来到金银岛，岛上虽然藏着王留下的宝藏，但是时时刻刻伴随着危险，你的任务是找到王留下的宝藏，离开小岛！\n准备好出发了吗？go！go!go!")
+operate1=input("前方有叉路口向左or向右？")
+if operate1 == "向左" :
+    operate2=input("前方有个山洞是or否进去探险？")
+    if operate2 == "否" :
+
+        operate3=input("前方有个小鳄鱼，是or否尝试收为宠物")
+        if operate3 == "否" :
+
+            operate4=input("前方有个房子是or否进入查看？")
+            if operate3 == "是" :
+                print("恭喜！你通关了！")
+
+
+            else:
+                print("抱歉！王的宠物把你咬死了！")
+        else:
+            print("抱歉！小鳄鱼把你咬死了！")        
+    else:
+        print("抱歉！山洞里的大蛇把你咬死了！")    
+else:
+    print("抱歉！路边的毒蛇把你毒死了！")

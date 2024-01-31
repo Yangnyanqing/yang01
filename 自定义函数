@@ -1,0 +1,6 @@
+def greet(name,天气):
+    print(f"你好啊{name}")
+    print(f"今天{天气}很好啊又是快乐的一天")
+    print("今天的Python旅程!")
+
+greet(天气="杨瑞祥！",name="晴天！")
