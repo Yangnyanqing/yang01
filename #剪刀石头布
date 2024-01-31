@@ -8,3 +8,19 @@ b="石头"
 c="布"
 abc = [a,b,c]
 your=int(your)
+
+if your +1 == she or your - 2 ==she:
+   print("恭喜大魔王！获胜！")
+elif your -1 ==she or your +2 ==she:
+   print("恭喜勇士！获胜！")
+elif your == she :
+   print("平局")
+else:
+   print(your)
+   print(she)
+
+your = abc[your-1]
+she = abc[she-1]
+
+print(f"你伸出了{your}")
+print(f"大魔王伸出了{she}")
