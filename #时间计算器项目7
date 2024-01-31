@@ -1,0 +1,6 @@
+#时间计算器项目7
+age=input("你今年多大了？\n")
+nian=90-int(age)
+yue=nian*12
+day=nian*365
+print(f"你还剩余约{nian}年，{yue}月，{day}日")
