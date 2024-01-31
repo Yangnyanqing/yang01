@@ -1,0 +1,7 @@
+import random #导入随机数模块
+#谁买单？项目16
+参加饭局的人=input("参加饭局的人的姓名xxx xxx").split()
+
+参加人数=len(参加饭局的人)
+买单的人=参加饭局的人[random.randint(0,参加人数-1)]
+print(买单的人)
