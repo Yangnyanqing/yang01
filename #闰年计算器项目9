@@ -1,0 +1,15 @@
+#闰年计算器项目9
+year=int(input("你要查那一年？"))
+         
+if year % 4 ==0:
+
+    if year % 100 ==0:
+         
+        if year % 400 ==0:
+            print("算法1"+str(year)+"闰年")
+        else:
+            print("算法1"+str(year)+"not闰年")
+    else:
+        print("算法1"+str(year)+"闰年")
+else:
+    print("算法1"+str(year)+"not闰年")
